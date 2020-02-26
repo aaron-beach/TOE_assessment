@@ -5,27 +5,27 @@ from django.views import View
 from assignment.models import *
 from assignment.forms import *
 
+
 class Index(FormView):
-	template_name = "index.html"
+    template_name = "index.html"
 
-	#TODO: Changes this to your new form
-	form_class= DemoForm
-	success_url= '/success/'
+    form_class = DogForm
+    success_url = '/success/'
 
-	def get_context_data(self,**kwargs):
-		form = self.form_class(initial=self.initial)
-		context = super(Index,self).get_context_data(**kwargs)
-		return context
+    def get_context_data(self, **kwargs):
+        form = self.form_class(initial=self.initial)
+        context = super(Index, self).get_context_data(**kwargs)
+        return context
 
+    def post(self, request, *args, **kwargs):
+        print("posted")
+        form = self.get_form()
 
-	def post(self, request, *args, **kargs):
-		print("posted")
-		form = self.get_form()
+        # TODO: Process form data here by saving to DB and sending Email
 
-		#TODO: Process form data here by saving to DB and sending Email
+        if form.is_valid():
+            return HttpResponseRedirect(self.get_success_url())
 
-		if form.is_valid():
-			return HttpResponseRedirect(self.get_success_url())
 
 class Success(TemplateView):
-	template_name='success.html'
+    template_name = 'success.html'
