@@ -20,16 +20,12 @@ class Index(FormView):
 
     def post(self, request, *args, **kwargs):
         print("posted")
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        pet_form = PetFormset(self.request.POST)
+        form = self.get_form()
 
         # TODO: Process form data here by saving to DB and sending Email
 
-        if form.is_valid() and pet_form.is_valid():
-            self.object = form.save()
-            pet_form.instance = self.object
-            pet_form.save()
+        if form.is_valid():
+            form.save()
 
             """
             Email results to DogOwner
