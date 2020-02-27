@@ -4,6 +4,7 @@ from django.views.generic import *
 from django.views import View
 from assignment.models import *
 from assignment.forms import *
+from django.core.mail import send_mail
 
 
 class Index(FormView):
@@ -19,11 +20,26 @@ class Index(FormView):
 
     def post(self, request, *args, **kwargs):
         print("posted")
-        form = self.get_form()
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        pet_form = PetFormset(self.request.POST)
 
         # TODO: Process form data here by saving to DB and sending Email
 
-        if form.is_valid():
+        if form.is_valid() and pet_form.is_valid():
+            self.object = form.save()
+            pet_form.instance = self.object
+            pet_form.save()
+
+            """
+            Email results to DogOwner
+            """
+            message = form.cleaned_data['message']
+            sender = ['results@dogstartup.com']
+            recipients = form.cleaned_data['user_email']
+
+            send_mail(message, sender, recipients, subject='Dog Startup Results')
+
             return HttpResponseRedirect(self.get_success_url())
 
 
