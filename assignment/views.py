@@ -1,8 +1,8 @@
 from django.shortcuts import render
+from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.views.generic import *
 from django.views import View
-from assignment.models import *
 from assignment.forms import *
 from django.core.mail import send_mail
 
@@ -26,17 +26,18 @@ class Index(FormView):
 
         if form.is_valid():
             form.save()
-
+            print("saved")
             """
             Email results to DogOwner
             """
-            message = form.cleaned_data['message']
-            sender = ['results@dogstartup.com']
-            recipients = form.cleaned_data['user_email']
-
-            send_mail(message, sender, recipients, subject='Dog Startup Results')
+            # message = form.cleaned_data['message']
+         #   sender = ['results@dogstartup.com']
+         #    recipients = form.cleaned_data['user_email']
+         #
+         #    send_mail(message, sender, recipients, subject='Dog Startup Results')
 
             return HttpResponseRedirect(self.get_success_url())
+        return render(request, 'Success',  {'form': form})
 
 
 class Success(TemplateView):

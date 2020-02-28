@@ -8,6 +8,10 @@ class DogForm(forms.ModelForm):
     class Meta:
         model = Pet
         fields = '__all__'
+        widgets = {
+            'daily_walk': forms.CheckboxInput,
+            'tricks': forms.CheckboxSelectMultiple,
+        }
         labels = {
             'email': 'Please provide an Email address to receive results.',
             'tricks': 'What tricks does your dog know? Select all that apply:',
