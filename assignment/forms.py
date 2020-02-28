@@ -10,7 +10,7 @@ class DogForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'daily_walk': forms.CheckboxInput,
-            'trick': forms.CheckboxSelectMultiple,
+            # 'trick': forms.CheckboxSelectMultiple,
         }
         labels = {
             'email': 'Please provide an Email address to receive results.',
