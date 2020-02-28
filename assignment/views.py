@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import *
 from django.views import View
 from assignment.forms import *
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 
 
 class Index(FormView):
@@ -28,16 +28,22 @@ class Index(FormView):
             form.save()
             print("saved")
             """
-            Email results to DogOwner
+            Email results to Owner
             """
-            # message = form.cleaned_data['message']
-         #   sender = ['results@dogstartup.com']
-         #    recipients = form.cleaned_data['user_email']
-         #
-         #    send_mail(message, sender, recipients, subject='Dog Startup Results')
+            contact_email = request.POST.get(
+                'email'
+                , '')
+
+            email = EmailMessage(
+                subject='Thank you!',
+                body='A message',
+                to=contact_email,
+                bcc='admin@dogstartup.com'
+            )
+            email.send()
 
             return HttpResponseRedirect(self.get_success_url())
-        return render(request, 'Success',  {'form': form})
+        return render(request, 'success.html', {'form': form})
 
 
 class Success(TemplateView):
