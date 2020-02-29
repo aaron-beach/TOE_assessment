@@ -7,6 +7,8 @@ from django.views import View
 from assignment.forms import *
 from django.core.mail import EmailMessage, send_mail
 
+from toe_hiring_2020.settings import DEFAULT_FROM_EMAIL
+
 
 class Index(FormView):
     template_name = "index.html"
@@ -27,6 +29,15 @@ class Index(FormView):
         if form.is_valid():
             form.save()
             print("saved")
+            email_contact = form.cleaned_data['email']
+            print(email_contact)
+            send_mail(
+                'Thank you!',
+                'Here is the message.',
+                DEFAULT_FROM_EMAIL,
+                [email_contact],
+                fail_silently=False,
+            )
             return HttpResponseRedirect(self.get_success_url())
         else:
             print(form.errors.as_json())
