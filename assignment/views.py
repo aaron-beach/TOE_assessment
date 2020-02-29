@@ -1,11 +1,10 @@
 from django.contrib import messages
 from django.shortcuts import render
-from django.urls import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import *
 from django.views import View
 from assignment.forms import *
-from django.core.mail import EmailMessage, send_mail, BadHeaderError
+from django.core.mail import send_mail, BadHeaderError
 
 from toe_hiring_2020.settings import DEFAULT_FROM_EMAIL
 
