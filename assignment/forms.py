@@ -11,7 +11,6 @@ class DogForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'daily_walk': forms.CheckboxInput,
-            # 'trick': forms.CheckboxSelectMultiple,
         }
         labels = {
             'email': 'Please provide an Email address to receive results.',
@@ -19,6 +18,7 @@ class DogForm(forms.ModelForm):
             'breed': 'What is the breed of your dog?',
             'daily_walk': 'Do you walk your dog daily?',
         }
+
     SIT = 'Sit'
     FETCH = 'Fetch'
     STAY = 'Stay'

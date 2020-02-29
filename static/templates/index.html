@@ -1,10 +1,16 @@
-<h1> Hello World</H1>
+{%  extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
+{% block content %}
 <form action="" method="post">
   {% csrf_token %}
 
   <!-- TODO: Replace with your form fields here. -->
 
-  {{ form.as_p }}
-  <input type="submit" value="Submit Here">
+  {{ form|crispy }}
+
+  <input type="submit" class="btn btn-primary" value="Submit Here">
 </form>
+
+{% endblock %}
