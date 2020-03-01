@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to The Opportunity Exchange Hiring Assignment</h1>
 
-## Table of contents
 ---
+## Table of contents
 * [Motivation](#motivation)
 * [Methodology](#methodology)
 * [Technologies](#technologies)
@@ -10,8 +10,10 @@
 
 
 
-## Motivation
 ---
+## Motivation
+
+
 ### Hiring assessment using Django, Python and PostgreSQL. 
 
 I chose to complete the assessment utilizing Django. This fulfilled a stated goal of mine set early in my learning process.
@@ -24,28 +26,38 @@ This decision created particular challenges.
 
 For every line of code written there is multiple pages of notes. I'm proud to submit my solution for your consideration and thank you for the opportunity. I look forward to discussing results. 
 
-## Methodology
 ---
+## Methodology
+
+
 The structure of the project is implemented with the "Fat model, skinny view" methodology. Allowing the model to do the heavy lifting with the data. This is similar to MVC methodology I'm accustomed to. 
 
-### The Form
 ---
+### The Form
+
+
 Constructed using ModelForm and styled using Crispy-forms for simplicity
 
 ![Form](https://github.com/aaron-beach/TOE_assessment/blob/master/images/Form.png)
 
-### Success Page
 ---
+### Success Page
+
+
 ![Success](https://github.com/aaron-beach/TOE_assessment/blob/master/images/Success_message.png)
 
-### The Email
 ---
+### The Email
+
+
 Successful submission results in an email logged to the console using the send_mail module built into Django.
 
 ![Email](https://github.com/aaron-beach/TOE_assessment/blob/master/images/Email_results.png)
 
-## Technologies
 ---
+## Technologies
+
+
 Project is created with:
 
 - Python=="3.7"
@@ -53,13 +65,16 @@ Project is created with:
 - django-crispy-forms=="1.9.0"
 - PostgreSQL
 
-## Usage
 ---
+## Usage
+
 
 Prior to getting going make sure to run the requirements.txt as this has been updated.
 ```sh
 pip install -r requirements.txt
 ```
+
+---
 ## To Dos
 
 - [x] Add a model to the database in _toe_hiring_2020/assignment/models.py_
@@ -68,8 +83,11 @@ pip install -r requirements.txt
 - [x] Save results to db upon form submission in _toe_hiring_2020/assignment/views.py_
 - [x] Send email confirmation upon form submission in _toe_hiring_2020/assignment/views.py_
 - [ ] (BONUS): Make results accessible via RESTFUL API
-## Author
+
+
 ---
+## Author
+
 👤 **Aaron Beach**
 
 * Website: aaronbeach.dev
@@ -78,6 +96,7 @@ pip install -r requirements.txt
 
 ---
 # Welcome to The Opportunity Exchange Hiring Assignment
+
 
 ### Getting started:  
 **!! DO NOT CLONE THIS REPO- FORK ONLY !!**  
