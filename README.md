@@ -1,6 +1,47 @@
+<h1 align="center">Welcome to The Opportunity Exchange Hiring Assignment</h1>
+<p>
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
+
+> Hiring assessment using Django, Python and PostgreSQL.
+
+## Table of contents
+
+* [Technologies](#technologies)
+* [Usage](#Usage)
+* [Author](#author)
+* [Getting started:](#TOEReadme)
+
+
+## Technologies
+
+>Project is created with:
+
+- Python=="3.7"
+- Django=="3.0.3"
+- django-crispy-forms=="1.9.0"
+- PostgreSQL
+
+## Usage
+
+```sh
+pip install -r requirements.txt
+```
+
+## Author
+
+👤 **Aaron Beach**
+
+* Website: aaronbeach.dev
+* Github: [@aaron-beach](https://github.com/aaron-beach)
+* LinkedIn: [@arbeach](https://linkedin.com/in/arbeach)
+
+
 # Welcome to The Opportunity Exchange Hiring Assignment
 
-### Getting stared:  
+### Getting started:  
 **!! DO NOT CLONE THIS REPO- FORK ONLY !!**  
 To get started, fork this repo and commit your solution to your repo.
 
