@@ -3,14 +3,13 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<form action="" method="post">
-  {% csrf_token %}
 
-  <!-- TODO: Replace with your form fields here. -->
+  <form action="" method="post">
+    {% csrf_token %}
+    <!-- Display the form utilizing Crispy-forms -->
+    {{ form|crispy }}
 
-  {{ form|crispy }}
-
-  <input type="submit" class="btn btn-primary" value="Submit Here">
-</form>
+    <input type="submit" class="btn btn-primary" value="Submit Here">
+  </form>
 
 {% endblock %}

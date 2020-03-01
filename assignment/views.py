@@ -19,23 +19,23 @@ class Index(FormView):
         return context
 
     def post(self, request, *args, **kwargs):
-        print("posted")
         form = self.get_form()
 
-        # TODO: Process form data here by saving to DB and sending Email
+        # Checking form for errors
         if form.is_valid():
+        # Save the validated form to the DB
             form.save()
-            print("saved")
-            Pet.email_user(form)
-            # try:
-            #
-            # except BadHeaderError:
-            #     return HttpResponse('Invalid header found.')
+
+        # After saving email user unless badheader is provided.    
+            try:
+                Pet.email_user(form)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
 
             return HttpResponseRedirect(self.get_success_url())
         else:
+        # Print any invalid errors to the console    
             print(form.errors.as_json())
-            messages.error(request, "Error")
         return render(request, 'success.html', {'form': form})
 
 
