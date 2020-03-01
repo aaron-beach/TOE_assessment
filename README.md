@@ -1,23 +1,52 @@
 <h1 align="center">Welcome to The Opportunity Exchange Hiring Assignment</h1>
 
-
-
-> Hiring assessment using Django, Python and PostgreSQL.
-
-![Form](https://photos.app.goo.gl/h7VYydDA8PFWKZsq8)
-![Success](https://photos.app.goo.gl/GQrM5HkZ2d8FJApf9)
-![Email](https://photos.app.goo.gl/wNiCG3gDtM2SvFkQ8)
-
 ## Table of contents
-
+---
+* [Motivation](#motivation)
+* [Methodology](#methodology)
 * [Technologies](#technologies)
 * [Usage](#Usage)
 * [Author](#author)
 
 
-## Technologies
 
->Project is created with:
+## Motivation
+---
+### Hiring assessment using Django, Python and PostgreSQL. 
+
+I chose to complete the assessment utilizing Django. This fulfilled a stated goal of mine set early in my learning process.
+
+This decision created particular challenges. 
+- Learn Python
+- Learn Django
+- Setup an environment to support Django and Python
+- Complete the assessment to my personal standards
+
+For every line of code written there is multiple pages of notes. I'm proud to submit my solution for your consideration and thank you for the opportunity. I look forward to discussing results. 
+
+## Methodology
+---
+The structure of the project is implemented with the "Fat model, skinny view" methodology. Allowing the model to do the heavy lifting with the data. This is similar to MVC methodology I'm accustomed to. 
+
+### The Form
+---
+Constructed using ModelForm and styled using Crispy-forms for simplicity
+
+![Form](https://github.com/aaron-beach/TOE_assessment/blob/master/images/Form.png)
+
+### Success Page
+---
+![Success](https://github.com/aaron-beach/TOE_assessment/blob/master/images/Success_message.png)
+
+### The Email
+---
+Successful submission results in an email logged to the console using the send_mail module built into Django.
+
+![Email](https://github.com/aaron-beach/TOE_assessment/blob/master/images/Email_results.png)
+
+## Technologies
+---
+Project is created with:
 
 - Python=="3.7"
 - Django=="3.0.3"
@@ -25,20 +54,29 @@
 - PostgreSQL
 
 ## Usage
+---
 
+Prior to getting going make sure to run the requirements.txt as this has been updated.
 ```sh
 pip install -r requirements.txt
 ```
+## To Dos
 
+- [x] Add a model to the database in _toe_hiring_2020/assignment/models.py_
+- [x] Create a form to add input to the new model in _toe_hiring_2020/assignment/forms.py_
+- [x] Display the form in _toe_hiring_2020/static/templates/index.html_
+- [x] Save results to db upon form submission in _toe_hiring_2020/assignment/views.py_
+- [x] Send email confirmation upon form submission in _toe_hiring_2020/assignment/views.py_
+- [ ] (BONUS): Make results accessible via RESTFUL API
 ## Author
-
+---
 👤 **Aaron Beach**
 
 * Website: aaronbeach.dev
 * Github: [@aaron-beach](https://github.com/aaron-beach)
 * LinkedIn: [@arbeach](https://linkedin.com/in/arbeach)
 
-
+---
 # Welcome to The Opportunity Exchange Hiring Assignment
 
 ### Getting started:  
