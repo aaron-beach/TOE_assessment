@@ -51,7 +51,7 @@ class Pet(models.Model):
 
             trick = form_response.cleaned_data['trick']
             trick_message = 'Tricks: \n'
-            is_none = re.search('\bNone', trick[0])
+            is_none = re.split(r"(\b[\w']+\b)(?:.+|$)", trick[0])[1] 
 
             if len(trick) > 1:
                 for i in trick:

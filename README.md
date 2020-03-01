@@ -1,18 +1,18 @@
 <h1 align="center">Welcome to The Opportunity Exchange Hiring Assignment</h1>
-<p>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-</p>
+
+
 
 > Hiring assessment using Django, Python and PostgreSQL.
+
+![Form](https://photos.app.goo.gl/h7VYydDA8PFWKZsq8)
+![Success](https://photos.app.goo.gl/GQrM5HkZ2d8FJApf9)
+![Email](https://photos.app.goo.gl/wNiCG3gDtM2SvFkQ8)
 
 ## Table of contents
 
 * [Technologies](#technologies)
 * [Usage](#Usage)
 * [Author](#author)
-* [Getting started:](#TOEReadme)
 
 
 ## Technologies
